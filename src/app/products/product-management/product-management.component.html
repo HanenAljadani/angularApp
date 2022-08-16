@@ -1,0 +1,26 @@
+<app-product-edit></app-product-edit>
+<div>
+<div class="row">
+    <div class="col-xs-10">
+    <hr>
+    <div class="product">
+    <h2>Products List</h2>
+    <br/>
+    <ul class="list-group">
+       <a   
+       class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let product of products ; let i = index"
+        (click)="onEditProduct(i)"
+        >
+        <li class="list-group-item list-group-item-action list-group-item-dark"><h3>{{i+1}} </h3>
+       <div class="listItem">{{product.id}} | {{product.name}} | {{product.description}}
+          {{product.size}}  | {{product.price}}
+        </div> 
+        </li>
+    </a> 
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>

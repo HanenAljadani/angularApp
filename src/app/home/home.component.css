@@ -1,0 +1,55 @@
+
+
+ng-sidebar-container{
+    height: 100vh;
+    margin-top: auto;
+}
+ .sidebar{
+    background-color: #f4f4f4;
+    width: 300px;
+    height: 700px;
+    padding: 2em 3em;
+    box-shadow: 0 0 2.5em rgba(85,85,85,0.5) ;
+    padding-bottom: 3cm;
+    
+
+}
+.menu{
+    margin-top: 2em;
+    display: block;
+}
+.menu li{
+    margin-bottom: 15px;
+}
+
+.menu li a{
+    display: block;
+    width: 100%
+}
+
+h2{
+
+    align-items: left;
+    align-content: left;
+    padding-left: 15cm;
+    padding-top: 4cm;
+    text-shadow:0 0 2.5em rgba(85,85,85,0.5) ;
+    line-height: 0.1em;
+}
+button{
+    margin-right: 1cm;
+    margin-left: 15cm;
+}
+h3{
+    color:  rgba(186, 186, 186, 0.75);
+    padding-left: 15cm;
+}
+
+
+h4{
+    color: rgb(149, 202, 220);
+}
+.sidebar a:hover, .dropdown:hover .dropbtn {
+
+    color: rgb(185, 185, 185);
+}

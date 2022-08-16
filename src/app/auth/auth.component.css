@@ -1,0 +1,58 @@
+
+.auth{
+    padding-right: 1cm;
+   padding-top: 0.5cm;
+   padding-left: 2cm;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 450px;
+    background: white;
+    justify-content: center;
+    justify-items: center;
+    
+    border-radius: 10px;
+    
+    box-shadow: 0 0 2.5em rgba(85,85,85,0.5) ;
+    
+}
+b{
+    font-size:large;
+    width: 7cm;
+    align-content: center;
+    
+}
+input{
+align-items: center;
+width: 7cm;
+
+}
+h4{
+    color: rgb(108, 153, 64);
+}
+.buttons button{
+    width: 7cm;
+    font-size: medium;
+}
+.signup button{
+    width: 7cm;
+    background-color: #888888;
+    font-size: medium;
+
+}
+h3 {
+    width:7cm; 
+    text-align: center; 
+    border-bottom: 1px solid rgb(172, 172, 172); 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+
+ } 
+ 
+ h3 span { 
+     background:white; 
+     padding:0 10px;
+     color: rgb(172, 172, 172); 
+ }

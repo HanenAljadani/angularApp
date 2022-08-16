@@ -1,0 +1,19 @@
+<div class="list">
+<h3>Products</h3>
+<ul class="list-group">
+      <ul class="list-group">
+        <div>
+        <a
+        class="list-group-item"
+        style="cursor: pointer"
+        
+          *ngFor="let productItem of products"
+          >
+          {{productItem.id}} | {{productItem.name}} | {{productItem.description}}<br/>
+          {{productItem.size}}  | {{productItem.price}}
+ 
+ </a>  
+</div>
+ </ul>
+</ul>
+</div>

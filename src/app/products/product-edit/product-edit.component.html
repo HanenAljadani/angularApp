@@ -1,0 +1,95 @@
+<div class="add">
+<div class="row">
+    <div class="col-xs-8">
+
+    <h2>Create new product</h2>
+    
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+                
+                
+                <div class="col-sm-2 form-group">
+                   <label for="name">Name</label>
+                   <input type="text" 
+                   id="name" 
+                   class="form-control"
+                   name="name"
+                   ngModel
+                   required
+                   >
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="id">Id</label>
+                    <input type="number" 
+                    id="id" 
+                    class="form-control"
+                    name="id"
+                    ngModel
+                    required
+                    >
+                 </div>
+                 </div>
+
+
+                 <div class="row">
+                 <div class="desc">
+                <div class="col-sm-4 form-group">
+                    <label for="description">Description</label>
+                    <input type="text" 
+                    id="description" 
+                    class="form-control"
+                    name="description"
+                    ngModel
+                    required
+                    
+                    >
+                 </div>
+                </div>
+            </div>
+                <div class="row">
+
+                <div class="col-sm-2 form-group">
+                    <label for="size">Size</label>
+                    <input type="text" 
+                    id="size" 
+                    class="form-control"
+                    name="size"
+                    ngModel
+                    required
+                    >
+                 </div>
+                 
+                 <div class="col-sm-2 form-group">
+                    <label for="price">Price</label>
+                    <input type="text" 
+                    id="price" 
+                    class="form-control"
+                    name="price"
+                    ngModel
+                    required
+                    
+                    >
+                </div>
+
+              
+            </div>
+       
+            <div class="buttons">
+            <div class="row">
+               <div class="col-xs-12" >
+                
+                <button class="btn btn-success" type="submit"
+                  [disabled]="!f.valid">{{editMode ? 'Update' : 'Add'}}</button>
+                <button class="btn btn-danger" 
+                type="button"
+                (click)="onDelete()"
+                [disabled]="!f.valid">Delete</button>
+                <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+               </div> 
+            </div>
+        </div>
+        </form>
+        </div>
+    </div>
+    
+    </div>

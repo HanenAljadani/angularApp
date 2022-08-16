@@ -1,0 +1,31 @@
+<app-subcategory-edit></app-subcategory-edit>
+<div class="list">
+    <div class="row">
+        <div class="col-xs-10">
+        <hr>
+        <div class="brand">
+        <h2>Subcategory List</h2>
+        <br/>
+        <ul class="list-group">
+           <a   
+           class="list-group-item"
+            style="cursor: pointer"
+            *ngFor="let subcategory of subcategory ; let i = index"
+            (click)="onEditSubcategory(i)"
+            >
+            <li class="list-group-item list-group-item-action list-group-item-dark"><h3>{{i+1}} </h3>
+            <div class="listItem">{{subcategory.id}} | {{subcategory.name}} | {{subcategory.isActive}} 
+            <br/>
+            <br/>
+                    {{subcategory.categoryId}}
+            </div>
+        </li>
+            
+            
+        </a> 
+        </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+    

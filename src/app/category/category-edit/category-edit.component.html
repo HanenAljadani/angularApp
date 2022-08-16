@@ -1,0 +1,69 @@
+<div class="add">
+    <div class="row">
+        <div class="col-xs-8 ">
+           
+        <h2>Create new Category</h2>
+        <div class="Add">
+         <form   (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+            <div class="col-sm-3 form-group">
+               <label for="name">Name</label>
+               <br/>
+               <input type="text" 
+               id="name"
+                  class="form-control"
+                  name="name"
+                   ngModel
+                   required> 
+                   </div>
+    
+                   <div class="col-sm-3 form-group">
+                   <label for="id">Id</label>
+                   <br/>
+                   <input type="number" id="id"
+                   class="form-control"
+                   name="id"
+                   ngModel
+                   required
+                   >
+                </div>
+                 <br/>
+                <div class="isActive">
+                <div  class="col-sm-8 col-xs-8  form-group">
+                    <label for="isActive">Is Active</label>
+                    <select class="form-control" id="isActive"
+                    name="isActive"
+                     ngModel 
+                     required>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+
+                </div>
+                
+             <div class="buttons">
+             <div class="row">
+                <div class="col-xs-12">
+
+                   <button 
+                    class="btn btn-success" type="submit" 
+                    [disabled]="!f.valid" >{{editMode ? 'Update' : 'Add'}} </button>
+                    <button class="btn btn-danger" 
+                    type="button"
+                    (click)="onDelete()"
+                    [disabled]="!f.valid">Delete</button>
+
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+                </div>
+              </div> 
+              </div>
+    
+         </form>
+         </div> 
+    </div>
+    </div>
+
+
+
+   </div>

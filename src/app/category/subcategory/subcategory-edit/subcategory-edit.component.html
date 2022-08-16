@@ -1,0 +1,73 @@
+<div class="add">
+    <div class="row">
+        <div class="col-xs-8 ">
+        <h2>Create new Subcategory</h2>
+         <form   (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+            <div class="col-sm-2 form-group">
+               <label>Name</label>
+                <br/>
+               <input type="text" id="name"
+                  class="form-control"
+                  name="name"
+                   ngModel
+                   required> 
+                   </div>
+    
+                   <div class="col-sm-2 form-group">
+                   <label >Id</label>
+                <br/>
+                   <input type="number" id="id"
+                   class="form-control"
+                   name="id"
+                   ngModel
+                   required
+                   >
+                </div>
+            </div>
+                <br/>
+                <div class="row">
+                
+                 <div class="col-sm-2  form-group">
+                       <label>Is Active </label> 
+                       <div class="isActive">
+                       <input type="text" id="isActive"
+                       class="form-control"
+                       name="isActive"
+                       ngModel
+                       required  
+                   >
+                  </div>
+                    </div>
+               
+               <div class="col-sm-2 form-group">
+                    <label >Category Id </label>
+                    <input type="number" id="categoryId"
+                    class="form-control"
+                    name="categoryId"
+                    ngModel
+                    required
+                    >
+                 </div>
+                </div>
+             <div class="buttons">
+             <div class="row">
+                <div class="col-xs-8">
+                    <button 
+                    type="submit"
+                    class="btn btn-success" [disabled]="!f.valid" >{{editMode ? 'Update' : 'Add'}} </button>
+
+                    <button class="btn btn-danger" 
+                    type="button"
+                    (click)="onDelete()"
+                    [disabled]="!f.valid">Delete</button>
+
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+                </div>
+              </div> 
+              </div>
+    
+         </form>
+         </div> 
+    </div>
+    </div>

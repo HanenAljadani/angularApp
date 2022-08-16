@@ -1,0 +1,24 @@
+<app-brand-edit></app-brand-edit>
+<div class="list">
+<div class="row">
+    <div class="col-xs-10">
+    <hr>
+    <div class="brand">
+    <h2>Brands List</h2>
+    <br/>
+    <ul class="list-group">
+       <a   
+       class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let brand of brands ; let i = index"
+        (click)="onEditProduct(i)"
+        >
+        <li class="list-group-item list-group-item-action list-group-item-dark"><h3>{{i+1}} </h3>
+            <div class="listItem"> {{brand.id}} | {{brand.name}} | {{brand.isActive}}
+        </div></li>
+    </a> 
+    </ul>
+    </div>
+    </div>
+    </div>
+</div>

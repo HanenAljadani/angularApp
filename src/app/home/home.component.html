@@ -1,0 +1,25 @@
+
+   <div [hidden]="!opened">
+    <div class="sidebar">
+     <p>Menu</p>
+     <ul class="menu" *ngFor="let category of category" >
+       <div *ngIf="category.isActive">
+       <li ><a (click)="clickedM()" style="cursor: pointer" >{{category.name}}</a></li>
+       <div *ngIf="clickM">
+       <ul *ngFor="let subcategory of subcategory" >
+         <li ><a (click)="show()" style="cursor: pointer" > {{subcategory.name}}</a></li>
+       </ul>
+     </div>
+   </div> 
+   
+     </ul>
+     <br/>
+     <br/>
+
+     <h4 (click)="sidebar()" style="cursor: pointer" >Back</h4>
+  </div>
+  </div>
+   <h2>Welcome to our website</h2>
+   <h3>______________________</h3>
+   <button type="button" class="btn btn-warning" (click)="sidebar()">Shop Now! </button>
+

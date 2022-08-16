@@ -1,0 +1,32 @@
+
+<app-category-edit></app-category-edit>
+<div class="list">
+    <div class="row">
+        <div class="col-xs-10">
+        <hr>
+        <h2>Category List</h2>
+        <br/>
+        <ul class="list-group">
+           <a   
+           class="list-group-item"
+            style="cursor: pointer"
+            *ngFor="let category of category ; let i = index"
+            (click)="onEditSubcategory(i)"
+            >
+            <li class="list-group-item list-group-item-action list-group-item-dark"><h3>{{i+1}} </h3>
+            <div class="listItem">{{category.id}} | {{category.name}} | {{category.isActive}} 
+            <br/>
+            <br/>
+            </div>
+        </li>
+            
+            
+        </a> 
+        </ul>
+
+ 
+    <button (click)="fetch()">fetch data </button>
+        </div>
+        </div>
+        </div>
+    
