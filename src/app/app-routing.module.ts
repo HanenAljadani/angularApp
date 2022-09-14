@@ -11,22 +11,21 @@ import { ProductsComponent } from "./products/products.component";
 import { SalesPersonsComponent } from "./sales-persons/sales-persons.component";
 import { CategoryComponent } from "./category/category.component";
 import { SubcategoryComponent } from "./category/subcategory/subcategory.component";
-//import { AuthGuard } from "./auth/auth.guard";
+import { AuthGuard } from "./auth/auth.guard";
 
-//, canActivate: [AuthGuard]
 const appRoutes: Routes=[
-    //{path: '', component: HomeComponent},
+    {path: '', component: HomeComponent},
     {path: 'products' ,component: ProductsComponent},
     {path: 'auth' ,component: AuthComponent},
-    {path: 'salesPersons' ,component: SalesPersonsComponent},
+    {path: 'salesPersons' ,component: SalesPersonsComponent, canActivate: [AuthGuard]},
     {path:'products/search/:searchTerm',component: ProductsItemComponent},
     {path: 'home', component: HomeComponent },
     {path: 'mens/shirts', component: MenuComponent},
     {path:'header',component:HeaderComponent},
-    {path:'productManagement',component:ProductManagementComponent},
-    {path:'brandManagement',component:BrandsManagementComponent},
-    {path:'categoryManagement',component:CategoryComponent},
-    {path:'subcategoryManagement',component:SubcategoryComponent}
+    {path:'productManagement',component:ProductManagementComponent, canActivate: [AuthGuard]},
+    {path:'brandManagement',component:BrandsManagementComponent, canActivate: [AuthGuard]},
+    {path:'categoryManagement',component:CategoryComponent, canActivate: [AuthGuard]},
+    {path:'subcategoryManagement',component:SubcategoryComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -32,7 +32,7 @@ export class CategoryComponent implements OnInit,OnDestroy {
     this.cService.startedEditing.next(index);
   }
   fetch(){
-  this.store.fetchCategory();
+  this.store.storeCategory();
   }
 
 }

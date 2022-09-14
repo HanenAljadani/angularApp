@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
    clickM=false;
    category: Category[];
    subcategory: Subcategory[];
+   showProduct=false;
   constructor(private cService : CategoryService,
     private sService : SubcategoryService,
     private store: DataStorageService,
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   }
   sidebar(){
     this.opened = !this.opened;
+    this.showProduct = false;
   }
   clickedM(){
     this.clickM= !this.clickM;
@@ -37,6 +39,7 @@ export class HomeComponent implements OnInit {
     this.store.fetchCategory();
       }
   show(){
-    this.router.navigate(['/products']);
+    this.showProduct = true;
+    //this.router.navigate(['/products']);
   }
 }

@@ -6,9 +6,8 @@ export class ProductService{
   productChanged = new Subject<Product[]>();
   startedEditing = new Subject<number>();
     public products: Product[] = [
-        new Product(123,'Test', 'Test Description', 'M' , 25),
-        new Product(123,'Test', 'Test Description', 'M' , 25),
-        new Product(123,'Test', 'Test Description', 'M' , 25)
+        new Product(123,'T-shirt', 'Blue t-shirt', 'M' , 45),
+        new Product(133,'Pants', 'Black pants', 'M' , 47)
       ];
       
        //get http request 

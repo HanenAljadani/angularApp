@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
@@ -30,6 +30,8 @@ import { SubcategoryEditComponent } from './category/subcategory/subcategory-edi
 import { CategoryService } from './category/category.service';
 import { SubcategoryService } from './category/subcategory/subcategory.service';
 import { AuthService } from './auth/auth.service';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AuthGuard } from './auth/auth.guard';
 //import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
@@ -68,7 +70,11 @@ import { AuthService } from './auth/auth.service';
     ,CategoryService
     ,SubcategoryService,
   AuthService,
-],//AuthGuard
+  AuthGuard,
+  {provide: HTTP_INTERCEPTORS,
+     useClass: AuthInterceptorService,
+    multi: true}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

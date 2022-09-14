@@ -24,21 +24,6 @@ export class AuthService{
         private router:Router){
 
     }
-
-/*
-    signup(){
-        this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
-        ')
-    }
-
-    signup(){
-       return !!localStorage.getItem('token');
- }
-
- login(){
-    return !!localStorage.getItem('token');
-}*/
-    
     signup(FName: string , LName : string , email: string , password: string){
        return this.http.post<AuthResponseData>(
             'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAh3ZmnRtfe2enntUV5t5kIOeVVrL0hh20',

@@ -10,6 +10,7 @@ import { BrandService } from "../brand/brand.service";
 import { Brands } from "../brand/brand.model";
 import { SalesService } from "../sales-persons/sales.service";
 import { Persons } from "../sales-persons/sales-person.model";
+import { map, tap } from "rxjs";
 @Injectable({providedIn: 'root'})
 export class DataStorageService{
     constructor(private http: HttpClient,
@@ -21,26 +22,40 @@ export class DataStorageService{
 
     storeCategory(){
         const category = this.cService.getCategor();
-         this.http
-        .put('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/category.json',
+        return this.http
+        .post('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/category.json',
          category).subscribe(response => {
             console.log(response);
         });
     }
 
     fetchCategory(){
-        this.http
+         this.http
         .get<Category[]>('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/category.json')
         .subscribe(category => {
-            this.cService.setCategory(category);
+           this.cService.setCategory(category);
         })
-    }
+       /*.pipe(
+    
+        map(category => {
+          return category.map(category=>{
+            return{
+              ...category
+            };
+          });
+        }),tap(category =>{
+        this.cService.setCategory(category);
+      })
+      );*/
+       
+      }
+    
 
    ///////////////////////////////////////////
 
     storeSubcategory(){
         const subcategory = this.sService.getSubcategor();
-         this.http
+        return this.http
         .put('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/subcategory.json',
         subcategory).subscribe(response => {
             console.log(response);
@@ -48,18 +63,20 @@ export class DataStorageService{
     }
 
     fetchSubcategory(){
-        this.http
+        return this.http
         .get<Subcategory[]>('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/subcategory.json')
-        .subscribe(subcategory => {
-            this.sService.setSubcategory(subcategory);
-        })
+        .subscribe(Subcategory => {
+            this.sService.setSubcategory(Subcategory);
+         })
+           
+          
     }
 
     ///////////////////////////////////////////
 
     storeProduct(){
         const product = this.pService.getProducts();
-         this.http
+        return this.http
         .put('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/product.json',
         product).subscribe(response => {
             console.log(response);
@@ -67,11 +84,11 @@ export class DataStorageService{
     }
 
     fetchProduct(){
-        this.http
+        return this.http
         .get<Product[]>('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/product.json')
         .subscribe(product => {
             this.pService.setProduct(product);
-        })
+         })
     }
 
 
@@ -79,7 +96,7 @@ export class DataStorageService{
     
     storeBrand(){
         const brand = this.bService.getBrands();
-         this.http
+        return this.http
         .put('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/brand.json',
         brand).subscribe(response => {
             console.log(response);
@@ -87,11 +104,13 @@ export class DataStorageService{
     }
 
     fetchBrand(){
-        this.http
+        return this.http
         .get<Brands[]>('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/brand.json')
         .subscribe(brand => {
             this.bService.setBrand(brand);
-        })
+         })
+
+        
     }
 
 
@@ -99,7 +118,7 @@ export class DataStorageService{
     
      storeSales(){
         const sales = this.salesService.getPersons();
-         this.http
+        return this.http
         .put('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/salesPerson.json',
         sales).subscribe(response => {
             console.log(response);
@@ -107,11 +126,11 @@ export class DataStorageService{
     }
 
     fetchSales(){
-        this.http
+         this.http
         .get<Persons[]>('https://ecatalogue-6b98d-default-rtdb.firebaseio.com/salesPerson.json')
         .subscribe(person => {
-            this.salesService.setPerson(person)
-        })
+            this.salesService.setPerson(person);
+         })
     }
 
 
